@@ -1,0 +1,33 @@
+﻿@model List<Trainee>
+
+     <a href="/Trainee/New" class="btn btn-outline-primary">New Trainee</a>
+
+<br/>
+<br/>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Grade</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+        @foreach (var t in Model)
+        {
+                     <tr>
+                      <th scope="row">@t.Id</th>
+                      <td>@t.Name</td>
+                      <td>@t.Address</td>
+                      <td>@t.Grade</td>
+                      <td><a href ="/Trainee/DetailsVM/@t.Id" class="btn btn-outline-info">Details</a></td>
+                      <td><a href ="/Trainee/Update/@t.Id" class="btn btn-outline-secondary">Update</a></td>
+                      <td><a href ="/Trainee/Delete/@t.Id" class="btn btn-outline-danger">Delete</a></td>
+                    </tr>  
+        }
+
+   </tbody>
+</table>

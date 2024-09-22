@@ -1,0 +1,26 @@
+﻿@model Department
+@{
+	ViewBag.Title = "Update Department";
+
+}
+
+
+
+<form method="post" asp-action="SaveUpdate" asp-controller="Department" >
+	<input type="hidden" asp-for="DeptId"/>
+	<div class="form-group">
+		<label asp-for="DeptName"> New Department Name</label>
+		<input asp-for="DeptName" class="form-control"/>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="Deptmanager" > Minimum Grade</label>
+		<input asp-for="Deptmanager" class="form-control"/>
+	</div>
+
+	<br/>
+	<button type="submit" class="btn btn-outline-primary">Save</button>
+</form>
+
+
+

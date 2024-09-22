@@ -1,0 +1,31 @@
+﻿@model List<Course>
+
+    <a href="/Course/New" class="btn btn-outline-primary">New Course</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+     
+      <th scope="col">Minimum degree</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+        @foreach (var c in Model)
+        {
+                 <tr>
+                  <th scope="row">@c.Id</th>
+                  <td>@c.Name</td>
+                  
+                  <td>@c.MinDegree</td>
+                      <td><a href ="/Course/Details/@c.Id" class="btn btn-outline-info">Details</a></td>
+                      <td><a href ="/Course/Update/@c.Id" class="btn btn-outline-secondary">Update</a></td>
+                      <td><a href ="/Course/Delete/@c.Id" class="btn btn-outline-danger">Delete</a></td>
+                </tr>  
+        }
+
+   </tbody>
+</table>

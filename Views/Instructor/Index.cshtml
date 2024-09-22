@@ -1,0 +1,36 @@
+﻿@model List<Instructor>
+
+    <a href="/Instructor/New" class="btn btn-outline-primary">New</a>
+
+<br/>
+<br/>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Salary</th>
+      <th></th>
+      <th></th>
+      <th></th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+        @foreach (var i in Model)
+        {
+                 <tr>
+                  <th scope="row">@i.Id</th>
+                  <td>@i.Name</td>
+                  <td>@i.Address</td>
+                  <td>@i.Salary</td>
+                  <td><a href ="/Instructor/Details/@i.Id" class="btn btn-outline-info">Details</a></td>
+                  <td><a href ="/Instructor/Update/@i.Id" class="btn btn-outline-secondary">Update</a></td>
+                  <td><a href ="/Instructor/Delete/@i.Id" class="btn btn-outline-danger">Delete</a></td>
+                </tr>  
+        }
+
+   </tbody>
+</table>

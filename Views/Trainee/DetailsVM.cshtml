@@ -1,0 +1,23 @@
+﻿@model MVC1.ViewModels.TraineeViewModel
+
+<div class="card" style="width: 18rem;">
+    <img src="/Images/@(string.IsNullOrEmpty(Model.Image) ? "default.jpg" : Model.Image)" class="card-img-top" alt="Trainee Image">
+    <div class="card-body">
+        <h5 class="card-title">@Model.TraineeName</h5>
+        <p class="card-text"><strong>Department:</strong> @Model.DepartmentName</p>
+        <p class="card-text"><strong>Address:</strong> @Model.Address</p>
+
+        <h6>Courses:</h6>
+        <ul class="list-group list-group-flush">
+            @foreach (var course in Model.Courses)
+            {
+                    <li class="list-group-item">
+                        <strong>@course.CourseName</strong>: 
+                        <span style="color: @(course.Grade >= course.MinimumGrade ? "green" : "red")">
+                        @course.Grade
+                        </span>
+                    </li>
+            }
+        </ul>
+    </div>
+</div>

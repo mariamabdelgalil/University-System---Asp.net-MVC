@@ -1,0 +1,12 @@
+﻿@model Instructor
+
+<div class="card" style="width: 18rem;">
+  <img src="/Images/@Model.Image" class="card-img-top" alt="card image">
+  <div class="card-body">
+    <h5 class="card-title">@Model.Name</h5>
+     <p class="card-text">@Model.Salary</p>
+      <p class="card-text">@Model.Address</p>
+    <p class="card-text">@Model.Department?.DeptName</p>
+    <a href="/Instructor/Index" class="btn btn-primary">Back to List</a>
+  </div>
+</div>

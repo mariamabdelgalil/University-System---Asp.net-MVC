@@ -1,0 +1,49 @@
+﻿@model Trainee
+@{
+	ViewBag.Title = "New Trainee";
+
+}
+@{
+	SelectList deptopt = new SelectList(ViewBag.Departments, "DeptId", "DeptName");
+	SelectList crsopt = new SelectList(ViewBag.crsResults, "Id", "Degree");
+}
+
+
+<form method="post" asp-action="SaveNew" asp-controller="Trainee" >
+	<input type="hidden" asp-for="Id"/>
+	<div class="form-group">
+		<label asp-for="Name"></label>
+		<input asp-for="Name" class="form-control"/>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="Grade" ></label>
+		<input asp-for="Grade" class="form-control"/>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="Address" ></label>
+		<input asp-for="Address" class="form-control"/>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="Image" ></label>
+		<input asp-for="Image" class="form-control"/>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="DeptId" >Department</label>
+		@*<input asp-for="DeptId" class="form-control"/>*@
+		<select asp-for="DeptId" asp-items="deptopt" class="form-control"></select>
+	</div>
+
+	
+
+	<br/>
+	<button type="submit" class="btn btn-outline-primary">Save</button>
+</form>
+
+
+
+
+
